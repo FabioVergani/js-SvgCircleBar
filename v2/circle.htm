@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@keyframes fadeout{0%{opacity:1}100%{opacity:0;visibility:hidden}}
+
+#progress{width:100px;height:100px;margin:0 auto;text-anchor:middle;font:0/0 sans-serif;fill:transparent;user-select:none}
+#progress circle{fill:#e3e3e4;stroke-width:1;stroke:#d8e1ec}
+#progress path{fill:#1a8eff}
+#progress path+circle{fill:#fff}
+#progress text{fill:#8e9dad;font:500 20px Roboto,sans-serif;}
+#progress.complete{ animation: fadeout .4s .8s ease-out forwards;}
+#progress.complete circle[r="49"]{fill:#4848ff}
+
+</style>
+</head>
+<body>
+
+ <svg id="progress" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="49"/>
+  <path d="M50 1 A 49 49,0,0,1,50 0,L 50 50 z"/>
+  <circle cx="50" cy="50" r="35"/>
+  <text x="51" y="58"/>
+ </svg>
+
+
+<div>
+  <input id="percent">
+  <button id="update">Update</button>
+	<button id="reset">Reset</button>
+</div>
+
+<script src='circle.js'></script>
+</body>
+</html>
